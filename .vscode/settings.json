@@ -1,0 +1,8 @@
+{
+    "cmake.useCMakePresets":"auto",
+    "cSpell.words": [
+        "cppcheck",
+        "Makefiles",
+        "valgrind"
+    ]
+}
