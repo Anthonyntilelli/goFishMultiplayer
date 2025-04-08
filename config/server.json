@@ -1,0 +1,20 @@
+{
+    "network": {
+      "port": 8000,
+      "timeout_seconds": 10
+    },
+    "game": {
+      "min_players": 2,
+      "max_players": 4
+    },
+    "player_defaults": {
+      "max_name_length": 16,
+      "allow_custom_names": true,
+      "default_name_prefix": "Player"
+    },
+    "logging": {
+      "enable_logging": true,
+      "log_file": "./logs/goFish.log",
+      "Debug:": true
+    }
+}
