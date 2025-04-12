@@ -61,22 +61,22 @@ public:
   /// if there is an issue.
   std::string setLogging(const bool enableLogging, const std::string &logFile);
 
-  std::string getPlayerDefaultDefaultNamePrefix() {
+  std::string getPlayerDefaultDefaultNamePrefix() const {
     return playerDefaultDefaultNamePrefix;
   };
-  std::string getLoggingLogfile() { return loggingLogfile; };
-  unsigned short getNetworkPort() { return networkPort; };
-  unsigned short getNetworkTimeoutSec() { return networkTimeoutSec; }
-  unsigned short getGameMinPlayers() { return gameMinPlayers; };
-  unsigned short getGameMaxPlayers() { return gameMaxPlayers; };
-  unsigned short getPlayerDefaultMaxNameLength() {
+  std::string getLoggingLogfile() const { return loggingLogfile; };
+  unsigned short getNetworkPort() const { return networkPort; };
+  unsigned short getNetworkTimeoutSec() const { return networkTimeoutSec; }
+  unsigned short getGameMinPlayers() const { return gameMinPlayers; };
+  unsigned short getGameMaxPlayers() const { return gameMaxPlayers; };
+  unsigned short getPlayerDefaultMaxNameLength() const {
     return playerDefaultMaxNameLength;
   };
-  bool getPlayerDefaultAllowCustomNames() {
+  bool getPlayerDefaultAllowCustomNames() const {
     return playerDefaultAllowCustomNames;
   };
-  bool getLoggingEnableLogging() { return loggingEnableLogging; };
-  bool getDebugEnableDebuging() { return debugEnableDebuging; };
+  bool getLoggingEnableLogging() const { return loggingEnableLogging; };
+  bool getDebugEnableDebuging() const { return debugEnableDebuging; };
 };
 
 #endif
