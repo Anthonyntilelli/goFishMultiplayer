@@ -38,4 +38,4 @@
 .vagrant
 
 # CMAKE
-build
+build/

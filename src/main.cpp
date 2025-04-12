@@ -1,2 +1,7 @@
+#include "config/config.hpp"
 
-int main() {}
+int main() {
+  Config c{};
+  c.loadsConfigFromFile("config/server.json");
+  return 1;
+}

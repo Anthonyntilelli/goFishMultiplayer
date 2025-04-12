@@ -30,10 +30,40 @@ public:
   /// if there is an issue.
   std::string loadsConfigFromFile(std::string const &jsonFile);
 
+  /// @brief Sets and validates the networking setting.
+  /// @param port port server listens on.
+  /// @param timeoutSeconds tcp timeout seconds.
+  /// @return returns "" if config is loaded without issue or a string of error
+  /// if there is an issue.
+  std::string setNetworking(const int port, const int timeoutSeconds);
+
+  /// @brief Sets and validates the game setting.
+  /// @param minPlayer minimum number of players.
+  /// @param maxPlayer max number of players.
+  /// @return returns "" if config is loaded without issue or a string of error
+  /// if there is an issue.
+  std::string setGame(const int minPlayer, const int maxPlayer);
+
+  /// @brief Sets and validates player defaults.
+  /// @param maxNameLength max length of a players name.
+  /// @param allowCustomNames sets if custom names are allowed.
+  /// @param defaultNamePrefix Default naming prefix is custom name is not
+  /// provided.
+  /// @return returns "" if config is loaded without issue or a string of error
+  /// if there is an issue.
+  std::string setPlayerDefaults(const int maxNameLength,
+                                const bool allowCustomNames,
+                                const std::string &defaultNamePrefix);
+  /// @brief Sets and validates logging settings.
+  /// @param enableLogging sets if logging should take place.
+  /// @param logFile file path for logging file.
+  /// @return returns "" if config is loaded without issue or a string of error
+  /// if there is an issue.
+  std::string setLogging(const bool enableLogging, const std::string &logFile);
+
   std::string getPlayerDefaultDefaultNamePrefix() {
     return playerDefaultDefaultNamePrefix;
   };
-
   std::string getLoggingLogfile() { return loggingLogfile; };
   unsigned short getNetworkPort() { return networkPort; };
   unsigned short getNetworkTimeoutSec() { return networkTimeoutSec; }
