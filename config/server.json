@@ -16,7 +16,7 @@
       "enable_logging": true,
       "log_file": "./logs/goFish.log"
     },
-    "Debug:": {
+    "Debug": {
       "enable_debugging": true
     }
 }
