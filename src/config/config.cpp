@@ -100,20 +100,64 @@ std::string Config::loadsConfigFromFile(std::string const &jsonFile) {
 }
 
 std::string Config::setNetworking(const int port, const int timeoutSeconds) {
-  return std::string();
+  if (port >= 1025 && port <= 65535) {
+    networkPort = static_cast<unsigned short>(port);
+  } else {
+    return "Network port is not in range: must be between 1025 and 65535.";
+  }
+  if (timeoutSeconds >= 5 && timeoutSeconds <= 60) {
+    networkTimeoutSec = static_cast<unsigned short>(timeoutSeconds);
+  } else {
+    return "Network timeout_seconds in not in range: must be between 5 and 60";
+  }
+
+  return "";
 }
 
 std::string Config::setGame(const int minPlayer, const int maxPlayer) {
-  return std::string();
+  if (minPlayer > maxPlayer)
+    return "Game min_player is greater then max_player.";
+  if (minPlayer >= 2 && minPlayer <= 6) {
+    gameMinPlayers = static_cast<unsigned short>(minPlayer);
+  } else {
+    return "Game min_player not in range: must be between 2 and 6";
+  }
+  if (maxPlayer >= 2 && maxPlayer <= 6) {
+    gameMaxPlayers = static_cast<unsigned short>(maxPlayer);
+  } else {
+    return "Game max_player not in range: must be between 2 and 6";
+  }
+  return "";
 }
 
 std::string Config::setPlayerDefaults(const int maxNameLength,
                                       const bool allowCustomNames,
                                       const std::string &defaultNamePrefix) {
-  return std::string();
+  if (maxNameLength >= 5 && maxNameLength <= 25) {
+    playerDefaultMaxNameLength = static_cast<unsigned short>(maxNameLength);
+  } else {
+    return "player_defaults max_name_length not in range: must be between 5 "
+           "and 25";
+  }
+  playerDefaultAllowCustomNames = allowCustomNames;
+  // room for the null char
+  if (defaultNamePrefix.size() < playerDefaultMaxNameLength + 1) {
+    playerDefaultDefaultNamePrefix = defaultNamePrefix;
+  } else {
+    return "player_defaults default_name_prefix is to big.";
+  }
+  return "";
 }
 
 std::string Config::setLogging(const bool enableLogging,
                                const std::string &logFile) {
-  return std::string();
+  loggingEnableLogging = enableLogging;
+  if (loggingEnableLogging) {
+    std::ifstream file{logFile};
+    if (!file.is_open()) {
+      return std::string{"Failed to open file:" + logFile};
+    }
+    loggingLogfile = logFile;
+  }
+  return "";
 }
