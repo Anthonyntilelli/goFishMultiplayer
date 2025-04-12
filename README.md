@@ -1,4 +1,4 @@
-# GoFishMultiplayer - Multiplayer game of GOfish built in C++
+# GoFishMultiplayer - Multiplayer Go Fish server and clients written in C++
 
 ## Table of Contents
 
@@ -9,13 +9,13 @@
 5. [Mic](#Mic)
 6. [Authors](#Authors)
 
-## Description <a name= "Description"></a>
+## Description
 
-## Parameters: <a name="Parameters"></a>
+## Parameters
 
-## Examples: <a name="Examples"></a>
+## Examples
 
-## Build <a name="Build"></a>
+## Build
 
 
 ### Dependencies
@@ -24,19 +24,22 @@
 
 ### Testing build
 
-## Mic <a name="Mic"></a>
+## Mic
 
-### Manual Build (No ASan)
+### Generating Documentation
 
-### Leak testing
+Doxygen is used to automatically generate the documentation. Rum the command from the project root directory.
+
+`doxygen`
 
 ### Static Analysis
 
 `cppcheck --enable=all --check-config --inconclusive --suppress=missingIncludeSystem src/`
 
 ### Formatting
+
 `find src -type f \( -name "*.cpp" -o -name "*.hpp" -o -name "*.c" -o -name "*.h" \) -exec clang-format -i {} \;`
 
-## Authors: <a name="Authors"></a>
+## Authors
 
 - Anthony Tilelli

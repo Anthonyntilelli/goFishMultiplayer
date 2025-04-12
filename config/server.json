@@ -14,7 +14,9 @@
     },
     "logging": {
       "enable_logging": true,
-      "log_file": "./logs/goFish.log",
-      "Debug:": true
+      "log_file": "./logs/goFish.log"
+    },
+    "Debug:": {
+      "enable_debugging": true
     }
 }
