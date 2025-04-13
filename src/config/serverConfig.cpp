@@ -163,3 +163,43 @@ std::string ServerConfig::setLogging(const bool enableLogging,
   }
   return "";
 }
+
+void ServerConfig::setDebug(const bool enableDebug) {
+  debugEnableDebuging = enableDebug;
+}
+
+std::string ServerConfig::getPlayerDefaultDefaultNamePrefix() const {
+  return playerDefaultDefaultNamePrefix;
+}
+
+std::string ServerConfig::getLoggingLogfile() const { return loggingLogfile; }
+
+unsigned short ServerConfig::getNetworkPort() const { return networkPort; }
+
+unsigned short ServerConfig::getNetworkTimeoutSec() const {
+  return networkTimeoutSec;
+}
+
+unsigned short ServerConfig::getGameMinPlayers() const {
+  return gameMinPlayers;
+}
+
+unsigned short ServerConfig::getGameMaxPlayers() const {
+  return gameMaxPlayers;
+}
+
+unsigned short ServerConfig::getPlayerDefaultMaxNameLength() const {
+  return playerDefaultMaxNameLength;
+}
+
+bool ServerConfig::getPlayerDefaultAllowCustomNames() const {
+  return playerDefaultAllowCustomNames;
+}
+
+bool ServerConfig::getLoggingEnableLogging() const {
+  return loggingEnableLogging;
+}
+
+bool ServerConfig::getDebugEnableDebuging() const {
+  return debugEnableDebuging;
+};

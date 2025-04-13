@@ -63,24 +63,18 @@ public:
 
   /// @brief Sets debug setting
   /// @param enableDebug set if debug should be enabled
-  void setDebug(const bool enableDebug) { debugEnableDebuging = enableDebug; };
+  void setDebug(const bool enableDebug);
 
-  std::string getPlayerDefaultDefaultNamePrefix() const {
-    return playerDefaultDefaultNamePrefix;
-  };
-  std::string getLoggingLogfile() const { return loggingLogfile; };
-  unsigned short getNetworkPort() const { return networkPort; };
-  unsigned short getNetworkTimeoutSec() const { return networkTimeoutSec; }
-  unsigned short getGameMinPlayers() const { return gameMinPlayers; };
-  unsigned short getGameMaxPlayers() const { return gameMaxPlayers; };
-  unsigned short getPlayerDefaultMaxNameLength() const {
-    return playerDefaultMaxNameLength;
-  };
-  bool getPlayerDefaultAllowCustomNames() const {
-    return playerDefaultAllowCustomNames;
-  };
-  bool getLoggingEnableLogging() const { return loggingEnableLogging; };
-  bool getDebugEnableDebuging() const { return debugEnableDebuging; };
+  std::string getPlayerDefaultDefaultNamePrefix() const;
+  std::string getLoggingLogfile() const;
+  unsigned short getNetworkPort() const;
+  unsigned short getNetworkTimeoutSec() const;
+  unsigned short getGameMinPlayers() const;
+  unsigned short getGameMaxPlayers() const;
+  unsigned short getPlayerDefaultMaxNameLength() const;
+  bool getPlayerDefaultAllowCustomNames() const;
+  bool getLoggingEnableLogging() const;
+  bool getDebugEnableDebuging() const;
 };
 
 #endif
