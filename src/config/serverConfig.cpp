@@ -1,6 +1,6 @@
-#include "config.hpp"
+#include "serverConfig.hpp"
 
-std::string Config::loadsConfigFromFile(std::string const &jsonFile) {
+std::string ServerConfig::loadsConfigFromFile(std::string const &jsonFile) {
   using json = nlohmann::json;
   json settingRaw{};
   std::ifstream configFile{jsonFile};
@@ -99,7 +99,8 @@ std::string Config::loadsConfigFromFile(std::string const &jsonFile) {
   return ""; // all passes
 }
 
-std::string Config::setNetworking(const int port, const int timeoutSeconds) {
+std::string ServerConfig::setNetworking(const int port,
+                                        const int timeoutSeconds) {
   if (port >= 1025 && port <= 65535) {
     networkPort = static_cast<unsigned short>(port);
   } else {
@@ -114,7 +115,7 @@ std::string Config::setNetworking(const int port, const int timeoutSeconds) {
   return "";
 }
 
-std::string Config::setGame(const int minPlayer, const int maxPlayer) {
+std::string ServerConfig::setGame(const int minPlayer, const int maxPlayer) {
   if (minPlayer > maxPlayer)
     return "Game min_player is greater then max_player.";
   if (minPlayer >= 2 && minPlayer <= 6) {
@@ -130,9 +131,10 @@ std::string Config::setGame(const int minPlayer, const int maxPlayer) {
   return "";
 }
 
-std::string Config::setPlayerDefaults(const int maxNameLength,
-                                      const bool allowCustomNames,
-                                      const std::string &defaultNamePrefix) {
+std::string
+ServerConfig::setPlayerDefaults(const int maxNameLength,
+                                const bool allowCustomNames,
+                                const std::string &defaultNamePrefix) {
   if (maxNameLength >= 5 && maxNameLength <= 25) {
     playerDefaultMaxNameLength = static_cast<unsigned short>(maxNameLength);
   } else {
@@ -149,8 +151,8 @@ std::string Config::setPlayerDefaults(const int maxNameLength,
   return "";
 }
 
-std::string Config::setLogging(const bool enableLogging,
-                               const std::string &logFile) {
+std::string ServerConfig::setLogging(const bool enableLogging,
+                                     const std::string &logFile) {
   loggingEnableLogging = enableLogging;
   if (loggingEnableLogging) {
     std::ifstream file{logFile};

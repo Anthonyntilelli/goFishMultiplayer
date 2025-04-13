@@ -1,7 +1,8 @@
 var searchData=
 [
-  ['setgame_0',['setGame',['../classConfig.html#a226d2aeb61cae34cee810344d6604b05',1,'Config']]],
-  ['setlogging_1',['setLogging',['../classConfig.html#a1c78ecdd775b05de9baa04cbb2ad1d86',1,'Config']]],
-  ['setnetworking_2',['setNetworking',['../classConfig.html#a84c8f6e5ce58bb0f1dff39a62f25ad7f',1,'Config']]],
-  ['setplayerdefaults_3',['setPlayerDefaults',['../classConfig.html#a40e454038c70d1ef6772098324619ebc',1,'Config']]]
+  ['setdebug_0',['setDebug',['../classServerConfig.html#a3594e987513c42eab86a1f3e95cb8579',1,'ServerConfig']]],
+  ['setgame_1',['setGame',['../classServerConfig.html#af6ad4ae2adf6896b8e7558e6b46d5f80',1,'ServerConfig']]],
+  ['setlogging_2',['setLogging',['../classServerConfig.html#af242463e21c0253ef12ce2edbfcbca3a',1,'ServerConfig']]],
+  ['setnetworking_3',['setNetworking',['../classServerConfig.html#a7b2c1adb6c8846ff2923e0d0bc124448',1,'ServerConfig']]],
+  ['setplayerdefaults_4',['setPlayerDefaults',['../classServerConfig.html#a0d244735ed9321b9a91418c5744abdc4',1,'ServerConfig']]]
 ];

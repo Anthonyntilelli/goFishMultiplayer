@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['loadsconfigfromfile_0',['loadsConfigFromFile',['../classConfig.html#abbb6f1b63feeabc3fe677b0f1adb90cf',1,'Config']]]
+  ['loadsconfigfromfile_0',['loadsConfigFromFile',['../classServerConfig.html#ad49c49ed54bc69a4fc552ccd121a3810',1,'ServerConfig']]]
 ];

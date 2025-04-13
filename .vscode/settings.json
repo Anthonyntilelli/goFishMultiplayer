@@ -2,6 +2,7 @@
     "cmake.useCMakePresets":"auto",
     "cSpell.words": [
         "cppcheck",
+        "Doxyfile",
         "dylib",
         "Makefiles",
         "nlohmann",

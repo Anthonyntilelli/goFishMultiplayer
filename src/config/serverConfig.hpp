@@ -1,5 +1,5 @@
-#ifndef CONFIG_H
-#define CONFIG_H
+#ifndef SERVERCONFIG_H
+#define SERVERCONFIG_H
 
 #include <fstream>
 #include <nlohmann/json.hpp>
@@ -9,7 +9,7 @@
 
 /// Config can be loaded from a Json File.
 /// It has a default configuration if a file is not provided to read from.
-class Config {
+class ServerConfig {
 private:
   std::string playerDefaultDefaultNamePrefix{"Player"};
   std::string loggingLogfile{""};
@@ -60,6 +60,10 @@ public:
   /// @return returns "" if config is loaded without issue or a string of error
   /// if there is an issue.
   std::string setLogging(const bool enableLogging, const std::string &logFile);
+
+  /// @brief Sets debug setting
+  /// @param enableDebug set if debug should be enabled
+  void setDebug(const bool enableDebug) { debugEnableDebuging = enableDebug; };
 
   std::string getPlayerDefaultDefaultNamePrefix() const {
     return playerDefaultDefaultNamePrefix;
