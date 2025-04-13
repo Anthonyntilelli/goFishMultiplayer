@@ -5,6 +5,8 @@ set(CMAKE_CXX_STANDARD 23)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 set(CMAKE_CXX_EXTENSIONS OFF)
 
+option(genDocs ON)
+
 # Include CPM
 include(FetchContent)
 FetchContent_Declare(
@@ -27,15 +29,8 @@ add_executable(goFishMultiplayer src/main.cpp)
 # Link dependencies to the executable
 target_link_libraries(goFishMultiplayer PRIVATE nlohmann_json::nlohmann_json serverConfig)
 
-# Run doxygen on build
-find_package(Doxygen REQUIRED)
-
-# Path to your Doxyfile (adjust if needed)
-set(DOXYFILE ${CMAKE_CURRENT_SOURCE_DIR}/Doxyfile)
-
-add_custom_target(doc_doxygen ALL
-    COMMAND ${DOXYGEN_EXECUTABLE} ${DOXYFILE}
-    WORKING_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}
-    COMMENT "Generating API documentation with Doxygen"
-    VERBATIM
-)
+# Add Cmake Modules
+list(APPEND CMAKE_MODULE_PATH "${PROJECT_SOURCE_DIR}/cmake/")
+if(genDocs)
+  include(docs)
+endif()
