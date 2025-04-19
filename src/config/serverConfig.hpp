@@ -31,8 +31,8 @@ public:
   std::string loadsConfigFromFile(std::string const &jsonFile);
 
   /// @brief Sets and validates the networking setting.
-  /// @param port port server listens on.
-  /// @param timeoutSeconds tcp timeout seconds.
+  /// @param port port server listens on. (Port must not be above 1025)
+  /// @param timeoutSeconds tcp timeout seconds. (Between 5 and 60 seconds)
   /// @return returns "" if config is loaded without issue or a string of error
   /// if there is an issue.
   std::string setNetworking(const int port, const int timeoutSeconds);
