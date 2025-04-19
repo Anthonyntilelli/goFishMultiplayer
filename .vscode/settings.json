@@ -1,6 +1,7 @@
 {
     "cmake.useCMakePresets":"auto",
     "cSpell.words": [
+        "catchorg",
         "cppcheck",
         "Dgen",
         "Doxyfile",

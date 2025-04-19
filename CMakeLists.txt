@@ -18,6 +18,7 @@ FetchContent_MakeAvailable(CPM)
 
 # Add dependencies
 CPMAddPackage("gh:nlohmann/json@3.11.3")
+CPMAddPackage("gh:catchorg/Catch2@3.8.1")
 
 # Add your source directory
 add_subdirectory(src)
@@ -30,7 +31,12 @@ add_executable(goFishMultiplayer src/main.cpp)
 target_link_libraries(goFishMultiplayer PRIVATE nlohmann_json::nlohmann_json serverConfig)
 
 # Add Cmake Modules
+list(PREPEND CMAKE_MODULE_PATH "${Catch2_SOURCE_DIR}/extras")
 list(APPEND CMAKE_MODULE_PATH "${PROJECT_SOURCE_DIR}/cmake/")
 if(genDocs)
   include(docs)
 endif()
+
+
+# Adding testing directory
+add_subdirectory(src/test)

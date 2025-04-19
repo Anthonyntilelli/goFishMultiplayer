@@ -2,12 +2,12 @@
 
 ## Table of Contents
 
-1. [Description](#Description)
-2. [Parameters](#Parameters)
-3. [Examples](#Examples)
-4. [Build](#Build)
-5. [Mic](#Mic)
-6. [Authors](#Authors)
+1. [Description]
+2. [Parameters]
+3. [Examples]
+4. [Build]
+5. [Mic]
+6. [Authors]
 
 ## Description
 
@@ -17,14 +17,13 @@
 
 ## Build
 
-
-### Dependencies
-
-### Compile
-
-### Testing build
+- cmake -S . -B build
+- cmake --build build
 
 ## Mic
+
+### Testing 
+- ctest --test-dir build --output-on-failure
 
 ### Generating Documentation
 
