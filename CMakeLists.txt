@@ -25,10 +25,6 @@ add_subdirectory(src)
 
 # Add main server executable
 add_executable(goFishMultiplayer src/main.cpp)
-# set_target_properties(goFishMultiplayer
-#     PROPERTIES
-#     RUNTIME_OUTPUT_DIRECTORY "${CMAKE_BINARY_DIR}/bin"
-# )
 
 # Link dependencies to the executable
 target_link_libraries(goFishMultiplayer PRIVATE nlohmann_json::nlohmann_json serverConfig)

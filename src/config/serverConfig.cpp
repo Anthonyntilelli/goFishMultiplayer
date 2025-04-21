@@ -91,9 +91,11 @@ std::string ServerConfig::loadConfigFromFile(std::string const &jsonFile) {
   const auto debug = settingRaw.find("debug");
   if (debug != settingRaw.end()) {
     const auto enableDebugging = debug.value()["enable_debugging"];
-    if (enableDebugging.is_null() && enableDebugging.is_boolean())
+    if (!enableDebugging.is_null() && enableDebugging.is_boolean()) {
+      setDebug(enableDebugging);
+    } else {
       return "'enable_debugging' must be define as a boolean in debug setting.";
-    setDebug(enableDebugging);
+    }
   }
 
   return ""; // all passes
