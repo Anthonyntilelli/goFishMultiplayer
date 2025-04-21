@@ -28,7 +28,7 @@ public:
   /// @param jsonFile relative or full path the the json config file.
   /// @return returns "" if config is loaded without issue or a string of error
   /// if there is an issue.
-  std::string loadsConfigFromFile(std::string const &jsonFile);
+  std::string loadConfigFromFile(std::string const &jsonFile);
 
   /// @brief Sets and validates the networking setting.
   /// @param port port server listens on. (Port must not be above 1025)

@@ -1,0 +1,23 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Debug goMultiplayerServer",
+            "type": "cppdbg",
+            "request": "launch",
+            "program": "${workspaceFolder}/build/goFishMultiplayer",
+            "args": [""],   // Arguments to pass on startup
+            "stopAtEntry": false,
+            "cwd": "${workspaceFolder}",
+            "environment": [],
+            "externalConsole": false,
+            // Make sure to match your actual debugger:
+            "MIMode": "gdb",
+            "miDebuggerPath": "/usr/bin/gdb",
+            // Ensure this matches the "label" in tasks.json
+            "setupCommands": [
+                { "text": "enable pretty-printing", "description": "Enable GDB pretty printing", "ignoreFailures": true },
+            ]
+        }
+    ]
+}

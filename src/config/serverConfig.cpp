@@ -1,6 +1,6 @@
 #include "serverConfig.hpp"
 
-std::string ServerConfig::loadsConfigFromFile(std::string const &jsonFile) {
+std::string ServerConfig::loadConfigFromFile(std::string const &jsonFile) {
   using json = nlohmann::json;
   json settingRaw{};
   std::ifstream configFile{jsonFile};
@@ -101,33 +101,25 @@ std::string ServerConfig::loadsConfigFromFile(std::string const &jsonFile) {
 
 std::string ServerConfig::setNetworking(const int port,
                                         const int timeoutSeconds) {
-  if (port >= 1025 && port <= 65535) {
-    networkPort = static_cast<unsigned short>(port);
-  } else {
+  if (port < 1025 || port > 65535)
     return "Network port is not in range: must be between 1025 and 65535.";
-  }
-  if (timeoutSeconds >= 5 && timeoutSeconds <= 60) {
-    networkTimeoutSec = static_cast<unsigned short>(timeoutSeconds);
-  } else {
+  if (timeoutSeconds < 5 || timeoutSeconds > 60)
     return "Network timeout_seconds in not in range: must be between 5 and 60";
-  }
 
+  networkPort = static_cast<unsigned short>(port);
+  networkTimeoutSec = static_cast<unsigned short>(timeoutSeconds);
   return "";
 }
 
 std::string ServerConfig::setGame(const int minPlayer, const int maxPlayer) {
   if (minPlayer > maxPlayer)
     return "Game min_player is greater then max_player.";
-  if (minPlayer >= 2 && minPlayer <= 6) {
-    gameMinPlayers = static_cast<unsigned short>(minPlayer);
-  } else {
+  if (minPlayer < 2 || minPlayer > 6)
     return "Game min_player not in range: must be between 2 and 6";
-  }
-  if (maxPlayer >= 2 && maxPlayer <= 6) {
-    gameMaxPlayers = static_cast<unsigned short>(maxPlayer);
-  } else {
+  if (maxPlayer < 2 || maxPlayer > 6)
     return "Game max_player not in range: must be between 2 and 6";
-  }
+  gameMinPlayers = static_cast<unsigned short>(minPlayer);
+  gameMaxPlayers = static_cast<unsigned short>(maxPlayer);
   return "";
 }
 
@@ -135,32 +127,32 @@ std::string
 ServerConfig::setPlayerDefaults(const int maxNameLength,
                                 const bool allowCustomNames,
                                 const std::string &defaultNamePrefix) {
-  if (maxNameLength >= 5 && maxNameLength <= 25) {
-    playerDefaultMaxNameLength = static_cast<unsigned short>(maxNameLength);
-  } else {
-    return "player_defaults max_name_length not in range: must be between 5 "
+  if (maxNameLength < 5 || maxNameLength > 25)
+    return "player_defaults max_name_length not in "
+           "range: must be between 5 "
            "and 25";
-  }
+
+  if (defaultNamePrefix.empty())
+    return "player_defaults default_name_prefix cannot be empty.";
+  if (defaultNamePrefix.size() > maxNameLength)
+    return "player_defaults default_name_prefix is too big.";
+
+  playerDefaultMaxNameLength = static_cast<unsigned short>(maxNameLength);
   playerDefaultAllowCustomNames = allowCustomNames;
-  // room for the null char
-  if (defaultNamePrefix.size() < playerDefaultMaxNameLength + 1) {
-    playerDefaultDefaultNamePrefix = defaultNamePrefix;
-  } else {
-    return "player_defaults default_name_prefix is to big.";
-  }
+  playerDefaultDefaultNamePrefix = defaultNamePrefix;
   return "";
 }
 
 std::string ServerConfig::setLogging(const bool enableLogging,
                                      const std::string &logFile) {
-  loggingEnableLogging = enableLogging;
-  if (loggingEnableLogging) {
-    std::ifstream file{logFile};
+  if (enableLogging) {
+    std::ofstream file{logFile, std::ios::app};
     if (!file.is_open()) {
       return std::string{"Failed to open file:" + logFile};
     }
-    loggingLogfile = logFile;
   }
+  loggingLogfile = logFile;
+  loggingEnableLogging = enableLogging;
   return "";
 }
 

@@ -1,13 +1,16 @@
 {
     "cmake.useCMakePresets":"auto",
+    // "cmake.debugConfig":{"name": "Debug goMultiplayerServer"},
     "cSpell.words": [
         "catchorg",
         "cppcheck",
+        "ctest",
         "Dgen",
         "Doxyfile",
         "dylib",
         "Makefiles",
         "nlohmann",
+        "pancreaticoduodenectomies",
         "smod",
         "valgrind"
     ],
@@ -82,6 +85,9 @@
         "thread": "cpp",
         "typeinfo": "cpp",
         "valarray": "cpp",
-        "variant": "cpp"
+        "variant": "cpp",
+        "expected": "cpp",
+        "future": "cpp",
+        "filesystem": "cpp"
     }
 }

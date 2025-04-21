@@ -1,0 +1,6 @@
+{
+    "game": {
+      "min_players": true,
+      "max_players": 4
+    }
+}

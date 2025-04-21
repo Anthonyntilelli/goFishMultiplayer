@@ -11,19 +11,21 @@
 
 ## Description
 
+- Note: All Command are from project's root directory. 
+
 ## Parameters
 
 ## Examples
 
 ## Build
 
-- cmake -S . -B build
-- cmake --build build
+- `cmake -S . -B build`
+- `cmake --build build`
 
 ## Mic
 
 ### Testing 
-- ctest --test-dir build --output-on-failure
+- `ctest --test-dir build --output-on-failure`
 
 ### Generating Documentation
 
