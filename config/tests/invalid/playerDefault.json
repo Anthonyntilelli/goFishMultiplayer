@@ -1,0 +1,7 @@
+{
+    "player_defaults": {
+      "max_name_length": 16,
+      "allow_custom_names": true,
+      "default_name_prefix": false
+    }
+}
