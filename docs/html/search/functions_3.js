@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['remaining_0',['remaining',['../classDeck.html#a582f5b4d0cbf4f5c2506763ada7185fa',1,'Deck']]]
+  ['loadconfigfromfile_0',['loadConfigFromFile',['../classServerConfig.html#a981f275fcbac04489bdd364ef4c887c4',1,'ServerConfig']]]
 ];
