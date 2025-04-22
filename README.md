@@ -2,12 +2,12 @@
 
 ## Table of Contents
 
-1. [Description]
-2. [Parameters]
-3. [Examples]
-4. [Build]
-5. [Mic]
-6. [Authors]
+1. Description
+2. Parameters
+3. Examples
+4. Build
+5. Mic
+6. Authors
 
 ## Description
 

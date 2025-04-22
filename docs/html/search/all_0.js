@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['gofishmultiplayer_20_2d_20multiplayer_20go_20fish_20server_20and_20clients_20written_20in_20c_2b_2b_0',['GoFishMultiplayer - Multiplayer Go Fish server and clients written in C++',['../index.html',1,'']]]
+  ['deck_0',['Deck',['../classDeck.html',1,'Deck'],['../classDeck.html#a57ae1cb4ac6fd61c249cefb2db85eb99',1,'Deck::Deck()']]],
+  ['draw_1',['draw',['../classDeck.html#a2d359689f3d49b99b76b92480903bcc3',1,'Deck']]]
 ];

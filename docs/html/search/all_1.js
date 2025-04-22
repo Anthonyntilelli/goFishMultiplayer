@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['loadconfigfromfile_0',['loadConfigFromFile',['../classServerConfig.html#a981f275fcbac04489bdd364ef4c887c4',1,'ServerConfig']]]
+  ['gofishmultiplayer_20_2d_20multiplayer_20go_20fish_20server_20and_20clients_20written_20in_20c_2b_2b_0',['GoFishMultiplayer - Multiplayer Go Fish server and clients written in C++',['../index.html',1,'']]]
 ];
