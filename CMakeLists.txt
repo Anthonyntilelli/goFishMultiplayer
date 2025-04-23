@@ -27,7 +27,7 @@ add_subdirectory(src)
 add_executable(goFishMultiplayer src/main.cpp)
 
 # Link dependencies to the executable
-target_link_libraries(goFishMultiplayer PRIVATE nlohmann_json::nlohmann_json serverConfig deck)
+target_link_libraries(goFishMultiplayer PRIVATE nlohmann_json::nlohmann_json serverConfig deck card player)
 
 # Add Cmake Modules
 list(PREPEND CMAKE_MODULE_PATH "${Catch2_SOURCE_DIR}/extras")

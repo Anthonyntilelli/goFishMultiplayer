@@ -9,9 +9,9 @@ bool Deck::isEmpty() const { return position == 52; }
 
 unsigned int Deck::remaining() const { return 52 - position; }
 
-std::string Deck::draw() {
+Card Deck::draw() {
   if (position == 52)
-    return "";
+    return Card{"", ""};
   auto card = pile.at(position);
   position++;
   return card;

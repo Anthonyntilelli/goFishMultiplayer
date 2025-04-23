@@ -1,21 +1,29 @@
 #ifndef DECK_H
 #define DECK_H
+#include "../card/card.hpp"
 #include <algorithm>
 #include <array>
 #include <chrono>
 #include <random>
 #include <string>
 
-/// @brief Deck for the cards
+/// @brief Deck of standard playing card represented as an array of cards
 class Deck {
 private:
-  std::array<std::string, 52> pile = {
-      "A♣",  "2♣", "3♣",  "4♣", "5♣",  "6♣", "7♣", "8♣", "9♣", "10♣", "J♣",
-      "Q♣",  "K♣", "A♦",  "2♦", "3♦",  "4♦", "5♦", "6♦", "7♦", "8♦",  "9♦",
-      "10♦", "J♦", "Q♦",  "K♦", "A♥",  "2♥", "3♥", "4♥", "5♥", "6♥",  "7♥",
-      "8♥",  "9♥", "10♥", "J♥", "Q♥",  "K♥", "A♠", "2♠", "3♠", "4♠",  "5♠",
-      "6♠",  "7♠", "8♠",  "9♠", "10♠", "J♠", "Q♠", "K♠",
-  };
+  std::array<Card, 52> pile = {
+      Card{"A", "♣"},  Card{"2", "♣"},  Card{"3", "♣"},  Card{"4", "♣"},
+      Card{"5", "♣"},  Card{"6", "♣"},  Card{"7", "♣"},  Card{"8", "♣"},
+      Card{"9", "♣"},  Card{"10", "♣"}, Card{"J", "♣"},  Card{"Q", "♣"},
+      Card{"K", "♣"},  Card{"A", "♦"},  Card{"2", "♦"},  Card{"3", "♦"},
+      Card{"4", "♦"},  Card{"5", "♦"},  Card{"6", "♦"},  Card{"7", "♦"},
+      Card{"8", "♦"},  Card{"9", "♦"},  Card{"10", "♦"}, Card{"J", "♦"},
+      Card{"Q", "♦"},  Card{"K", "♦"},  Card{"A", "♥"},  Card{"2", "♥"},
+      Card{"3", "♥"},  Card{"4", "♥"},  Card{"5", "♥"},  Card{"6", "♥"},
+      Card{"7", "♥"},  Card{"8", "♥"},  Card{"9", "♥"},  Card{"10", "♥"},
+      Card{"J", "♥"},  Card{"Q", "♥"},  Card{"K", "♥"},  Card{"A", "♠"},
+      Card{"2", "♠"},  Card{"3", "♠"},  Card{"4", "♠"},  Card{"5", "♠"},
+      Card{"6", "♠"},  Card{"7", "♠"},  Card{"8", "♠"},  Card{"9", "♠"},
+      Card{"10", "♠"}, Card{"J", "♠"},  Card{"Q", "♠"},  Card{"K", "♠"}};
   unsigned int position = 0;
 
 public:
@@ -31,9 +39,9 @@ public:
   unsigned int remaining() const;
 
   /// @brief Draws a card from the top of the deck
-  /// @return will return a card from top of deck or will return "" on empty
-  /// deck
-  std::string draw();
+  /// @return will return a card from top of deck or will return blank card on
+  /// empty deck
+  Card draw();
 };
 
 #endif

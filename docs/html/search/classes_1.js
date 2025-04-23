@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['serverconfig_0',['ServerConfig',['../classServerConfig.html',1,'']]]
+  ['deck_0',['Deck',['../classDeck.html',1,'']]]
 ];

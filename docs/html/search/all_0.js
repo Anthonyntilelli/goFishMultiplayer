@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['deck_0',['Deck',['../classDeck.html',1,'Deck'],['../classDeck.html#a57ae1cb4ac6fd61c249cefb2db85eb99',1,'Deck::Deck()']]],
-  ['draw_1',['draw',['../classDeck.html#a2d359689f3d49b99b76b92480903bcc3',1,'Deck']]]
+  ['addcardtohand_0',['addCardToHand',['../classPlayer.html#adfb8532293ca3b86e314b8d8ee4547b6',1,'Player']]],
+  ['askforcards_1',['askForCards',['../classPlayer.html#ab331740f026f04f2aadf5fba37253224',1,'Player']]]
 ];
