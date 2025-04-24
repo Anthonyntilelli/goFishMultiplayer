@@ -17,6 +17,4 @@ target_link_libraries(tests
 )
 
 include(Catch)
-enable_testing()
-
 catch_discover_tests(tests  WORKING_DIRECTORY ${CMAKE_SOURCE_DIR})

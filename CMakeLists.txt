@@ -41,4 +41,6 @@ if(staticCheck)
 endif()
 
 # Adding testing directory
+include(CTest)
+enable_testing()
 add_subdirectory(src/test)
