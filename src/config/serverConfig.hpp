@@ -65,15 +65,34 @@ public:
   /// @param enableDebug set if debug should be enabled
   void setDebug(const bool enableDebug);
 
+  /// @brief Get method for PlayerDefaultDefaultNamePrefix
   std::string getPlayerDefaultDefaultNamePrefix() const;
+
+  /// @brief Get method for loggingLogfile
   std::string getLoggingLogfile() const;
+
+  /// @brief Get method for NetworkPort
   unsigned short getNetworkPort() const;
+
+  /// @brief Get method for NetworkTimeoutSec
   unsigned short getNetworkTimeoutSec() const;
+
+  /// @brief Get method for GameMinPlayers
   unsigned short getGameMinPlayers() const;
+
+  /// @brief Get method for GameMaxPlayers
   unsigned short getGameMaxPlayers() const;
+
+  /// @brief Get method for PlayerDefaultMaxNameLength
   unsigned short getPlayerDefaultMaxNameLength() const;
+
+  /// @brief Get method for PlayerDefaultAllowCustomNames
   bool getPlayerDefaultAllowCustomNames() const;
+
+  /// @brief Get method for LoggingEnableLogging
   bool getLoggingEnableLogging() const;
+
+  /// @brief Get method for DebugEnableDebuging
   bool getDebugEnableDebuging() const;
 };
 

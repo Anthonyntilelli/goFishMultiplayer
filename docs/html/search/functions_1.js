@@ -1,8 +1,4 @@
 var searchData=
 [
-  ['setdebug_0',['setDebug',['../classServerConfig.html#a3594e987513c42eab86a1f3e95cb8579',1,'ServerConfig']]],
-  ['setgame_1',['setGame',['../classServerConfig.html#af6ad4ae2adf6896b8e7558e6b46d5f80',1,'ServerConfig']]],
-  ['setlogging_2',['setLogging',['../classServerConfig.html#af242463e21c0253ef12ce2edbfcbca3a',1,'ServerConfig']]],
-  ['setnetworking_3',['setNetworking',['../classServerConfig.html#a7b2c1adb6c8846ff2923e0d0bc124448',1,'ServerConfig']]],
-  ['setplayerdefaults_4',['setPlayerDefaults',['../classServerConfig.html#a0d244735ed9321b9a91418c5744abdc4',1,'ServerConfig']]]
+  ['card_0',['Card',['../classCard.html#ad3e990e28a4961b998eb5995f1191881',1,'Card::Card()=default'],['../classCard.html#a8b9f2439eb3a6bea4b020c234b4f56a9',1,'Card::Card(const std::string &amp;value, const std::string &amp;suit)']]]
 ];

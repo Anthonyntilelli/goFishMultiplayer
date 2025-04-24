@@ -1,6 +1,5 @@
 {
     "cmake.useCMakePresets":"auto",
-    // "cmake.debugConfig":{"name": "Debug goMultiplayerServer"},
     "cSpell.words": [
         "catchorg",
         "cppcheck",

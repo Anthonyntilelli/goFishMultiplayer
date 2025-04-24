@@ -1,1 +1,4 @@
 add_subdirectory(config)
+add_subdirectory(deck)
+add_subdirectory(card)
+add_subdirectory(player)

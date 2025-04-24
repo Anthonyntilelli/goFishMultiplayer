@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['loadconfigfromfile_0',['loadConfigFromFile',['../classServerConfig.html#a981f275fcbac04489bdd364ef4c887c4',1,'ServerConfig']]]
+  ['card_0',['Card',['../classCard.html',1,'Card'],['../classCard.html#ad3e990e28a4961b998eb5995f1191881',1,'Card::Card()=default'],['../classCard.html#a8b9f2439eb3a6bea4b020c234b4f56a9',1,'Card::Card(const std::string &amp;value, const std::string &amp;suit)']]]
 ];

@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['gofishmultiplayer_20_2d_20multiplayer_20go_20fish_20server_20and_20clients_20written_20in_20c_2b_2b_0',['GoFishMultiplayer - Multiplayer Go Fish server and clients written in C++',['../index.html',1,'']]]
+  ['addcardtohand_0',['addCardToHand',['../classPlayer.html#af4a05b8e15e7abe5a606667d59e51e5f',1,'Player']]],
+  ['askforcards_1',['askForCards',['../classPlayer.html#a565504c7f18a65634ca6ca7d5218589a',1,'Player']]]
 ];
