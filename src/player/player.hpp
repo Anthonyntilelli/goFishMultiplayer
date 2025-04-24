@@ -1,7 +1,6 @@
 #ifndef PLAYER_H
 #define PLAYER_H
 #include "../card/card.hpp"
-#include <array>
 #include <map>
 #include <set>
 #include <stdexcept>
@@ -11,7 +10,7 @@
 /// @brief PLayer in the go fish game, will contain name, hand, and score.
 class Player {
 private:
-  std::map<std::string, std::array<Card, 4>> hand{
+  std::map<std::string, std::vector<Card>> hand{
       {"A", {}}, {"2", {}}, {"3", {}}, {"4", {}}, {"5", {}},
       {"6", {}}, {"7", {}}, {"8", {}}, {"9", {}}, {"10", {}},
       {"J", {}}, {"Q", {}}, {"K", {}}};
@@ -29,19 +28,19 @@ public:
   /// will remove those card from hand and increase if score so.
   /// @param card card to be added the hand.
   /// @return return false if care if a blank.
-  bool addCardToHand(Card card);
+  bool addCardToHand(const Card &card);
 
   /// @brief Check if player has a value and return cards if they do.
   /// @param value the card value being asked for.
-  /// @return return an array of cards matching the value or return empty array
-  /// if no cards match.
-  std::array<Card, 4> askForCards(std::string value);
+  /// @return return an vector of cards matching the value or return empty
+  /// vector if no cards match.
+  std::vector<Card> askForCards(const std::string &value);
 
   /// @brief Returns if the player's hand is empty.
   bool isEmptyHand() const;
 
   /// @brief Converts the players hand into a vector.
-  /// @return return an array of cards.
+  /// @return return an vector of cards.
   std::vector<Card> toCardVector() const;
 
   /// @brief Gets hand length.

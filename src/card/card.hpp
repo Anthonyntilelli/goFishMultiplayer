@@ -40,9 +40,8 @@ public:
   friend inline bool operator!=(const Card &lhs, const Card &rhs) {
     return !(lhs == rhs);
   }
-  // Add operator< for ordering
+  /// @brief Add operator< for ordering
   bool operator<(const Card &other) const {
-    // First compare by suit, then by rank
     if (suit != other.suit)
       return suit < other.suit;
     return value < other.value;

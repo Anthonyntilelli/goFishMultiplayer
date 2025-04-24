@@ -5,7 +5,8 @@ set(CMAKE_CXX_STANDARD 23)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 set(CMAKE_CXX_EXTENSIONS OFF)
 
-option(genDocs ON)
+option(genDocs "Automatically run doxygen" ON)
+option(staticCheck "Run static check via cppcheck" ON)
 
 # Include CPM
 include(FetchContent)
@@ -35,7 +36,9 @@ list(APPEND CMAKE_MODULE_PATH "${PROJECT_SOURCE_DIR}/cmake/")
 if(genDocs)
   include(docs)
 endif()
-
+if(staticCheck)
+  include(cppcheck)
+endif()
 
 # Adding testing directory
 add_subdirectory(src/test)

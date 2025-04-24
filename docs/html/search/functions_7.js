@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['remaining_0',['remaining',['../classDeck.html#a582f5b4d0cbf4f5c2506763ada7185fa',1,'Deck']]]
+  ['player_0',['Player',['../classPlayer.html#a223f69cd41b3c5930287dc556670d393',1,'Player']]]
 ];

@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['addcardtohand_0',['addCardToHand',['../classPlayer.html#adfb8532293ca3b86e314b8d8ee4547b6',1,'Player']]],
-  ['askforcards_1',['askForCards',['../classPlayer.html#ab331740f026f04f2aadf5fba37253224',1,'Player']]]
+  ['addcardtohand_0',['addCardToHand',['../classPlayer.html#af4a05b8e15e7abe5a606667d59e51e5f',1,'Player']]],
+  ['askforcards_1',['askForCards',['../classPlayer.html#a565504c7f18a65634ca6ca7d5218589a',1,'Player']]]
 ];

@@ -79,12 +79,12 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a223f69cd41b3c5930287dc556670d393"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPlayer.html#a223f69cd41b3c5930287dc556670d393">Player</a> (const std::string &amp;name, const std::set&lt; <a class="el" href="classCard.html">Card</a> &gt; &amp;initialHand)</td></tr>
 <tr class="memdesc:a223f69cd41b3c5930287dc556670d393"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initialize the player.  <a href="classPlayer.html#a223f69cd41b3c5930287dc556670d393">More...</a><br /></td></tr>
 <tr class="separator:a223f69cd41b3c5930287dc556670d393"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:adfb8532293ca3b86e314b8d8ee4547b6"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPlayer.html#adfb8532293ca3b86e314b8d8ee4547b6">addCardToHand</a> (<a class="el" href="classCard.html">Card</a> card)</td></tr>
-<tr class="memdesc:adfb8532293ca3b86e314b8d8ee4547b6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Adds a card to the hand, and check if player has 4 of those cards, will remove those card from hand and increase if score so.  <a href="classPlayer.html#adfb8532293ca3b86e314b8d8ee4547b6">More...</a><br /></td></tr>
-<tr class="separator:adfb8532293ca3b86e314b8d8ee4547b6"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab331740f026f04f2aadf5fba37253224"><td class="memItemLeft" align="right" valign="top">std::array&lt; <a class="el" href="classCard.html">Card</a>, 4 &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPlayer.html#ab331740f026f04f2aadf5fba37253224">askForCards</a> (std::string value)</td></tr>
-<tr class="memdesc:ab331740f026f04f2aadf5fba37253224"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check if player has a value and return cards if they do.  <a href="classPlayer.html#ab331740f026f04f2aadf5fba37253224">More...</a><br /></td></tr>
-<tr class="separator:ab331740f026f04f2aadf5fba37253224"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af4a05b8e15e7abe5a606667d59e51e5f"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPlayer.html#af4a05b8e15e7abe5a606667d59e51e5f">addCardToHand</a> (const <a class="el" href="classCard.html">Card</a> &amp;card)</td></tr>
+<tr class="memdesc:af4a05b8e15e7abe5a606667d59e51e5f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Adds a card to the hand, and check if player has 4 of those cards, will remove those card from hand and increase if score so.  <a href="classPlayer.html#af4a05b8e15e7abe5a606667d59e51e5f">More...</a><br /></td></tr>
+<tr class="separator:af4a05b8e15e7abe5a606667d59e51e5f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a565504c7f18a65634ca6ca7d5218589a"><td class="memItemLeft" align="right" valign="top">std::vector&lt; <a class="el" href="classCard.html">Card</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPlayer.html#a565504c7f18a65634ca6ca7d5218589a">askForCards</a> (const std::string &amp;value)</td></tr>
+<tr class="memdesc:a565504c7f18a65634ca6ca7d5218589a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check if player has a value and return cards if they do.  <a href="classPlayer.html#a565504c7f18a65634ca6ca7d5218589a">More...</a><br /></td></tr>
+<tr class="separator:a565504c7f18a65634ca6ca7d5218589a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af83c47fcd1a97f2b5480d2d518d97e61"><td class="memItemLeft" align="right" valign="top"><a id="af83c47fcd1a97f2b5480d2d518d97e61" name="af83c47fcd1a97f2b5480d2d518d97e61"></a>
 bool&#160;</td><td class="memItemRight" valign="bottom"><b>isEmptyHand</b> () const</td></tr>
 <tr class="memdesc:af83c47fcd1a97f2b5480d2d518d97e61"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns if the player's hand is empty. <br /></td></tr>
@@ -152,8 +152,8 @@ unsigned short&#160;</td><td class="memItemRight" valign="bottom"><b>getScore</b
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
-<a id="adfb8532293ca3b86e314b8d8ee4547b6" name="adfb8532293ca3b86e314b8d8ee4547b6"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#adfb8532293ca3b86e314b8d8ee4547b6">&#9670;&nbsp;</a></span>addCardToHand()</h2>
+<a id="af4a05b8e15e7abe5a606667d59e51e5f" name="af4a05b8e15e7abe5a606667d59e51e5f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af4a05b8e15e7abe5a606667d59e51e5f">&#9670;&nbsp;</a></span>addCardToHand()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -161,7 +161,7 @@ unsigned short&#160;</td><td class="memItemRight" valign="bottom"><b>getScore</b
         <tr>
           <td class="memname">bool Player::addCardToHand </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="classCard.html">Card</a>&#160;</td>
+          <td class="paramtype">const <a class="el" href="classCard.html">Card</a> &amp;&#160;</td>
           <td class="paramname"><em>card</em></td><td>)</td>
           <td></td>
         </tr>
@@ -179,16 +179,16 @@ unsigned short&#160;</td><td class="memItemRight" valign="bottom"><b>getScore</b
 
 </div>
 </div>
-<a id="ab331740f026f04f2aadf5fba37253224" name="ab331740f026f04f2aadf5fba37253224"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ab331740f026f04f2aadf5fba37253224">&#9670;&nbsp;</a></span>askForCards()</h2>
+<a id="a565504c7f18a65634ca6ca7d5218589a" name="a565504c7f18a65634ca6ca7d5218589a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a565504c7f18a65634ca6ca7d5218589a">&#9670;&nbsp;</a></span>askForCards()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">std::array&lt; <a class="el" href="classCard.html">Card</a>, 4 &gt; Player::askForCards </td>
+          <td class="memname">std::vector&lt; <a class="el" href="classCard.html">Card</a> &gt; Player::askForCards </td>
           <td>(</td>
-          <td class="paramtype">std::string&#160;</td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
           <td class="paramname"><em>value</em></td><td>)</td>
           <td></td>
         </tr>
@@ -202,7 +202,7 @@ unsigned short&#160;</td><td class="memItemRight" valign="bottom"><b>getScore</b
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>return an array of cards matching the value or return empty array if no cards match. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>return an vector of cards matching the value or return empty vector if no cards match. </dd></dl>
 
 </div>
 </div>
@@ -222,7 +222,7 @@ unsigned short&#160;</td><td class="memItemRight" valign="bottom"><b>getScore</b
 </div><div class="memdoc">
 
 <p>Converts the players hand into a vector. </p>
-<dl class="section return"><dt>Returns</dt><dd>return an array of cards. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>return an vector of cards. </dd></dl>
 
 </div>
 </div>

@@ -9,37 +9,37 @@ Player::Player(const std::string &name, const std::set<Card> &initialHand) {
     for (auto card : initialHand) {
       if (card.isBlank())
         throw std::invalid_argument("No blank cards allowed.");
-      hand.at(card.getValue()).at(hand.at(card.getValue()).size()) = card;
+      hand.at(card.getValue()).push_back(card);
     }
 
     // moving cards to score if have all cards.
     for (auto &[key, val] : hand) {
       if (val.size() == 4) {
-        val = {};
+        val.clear();
         score++;
       }
     }
   }
 }
 
-bool Player::addCardToHand(Card card) {
+bool Player::addCardToHand(const Card &card) {
   if (card.isBlank())
     return false;
-  hand.at(card.getValue()).at(hand.at(card.getValue()).size()) = card;
+  hand.at(card.getValue()).push_back(card);
   if (hand.at(card.getValue()).size() == 4) {
-    hand.at(card.getValue()) = {};
+    hand.at(card.getValue()).clear(); // remove cards from hand
     score++;
   }
   return true;
 }
 
-std::array<Card, 4> Player::askForCards(std::string value) {
+std::vector<Card> Player::askForCards(const std::string &value) {
   auto subset = hand.find(value);
   // Invalid value
   if (subset == hand.end())
-    return std::array<Card, 4>{};
+    return std::vector<Card>{};
   auto cards = hand.at(value);
-  hand.at(value) = std::array<Card, 4>{};
+  hand.at(value).clear(); // wipe cards
   return cards;
 }
 
@@ -58,7 +58,7 @@ std::vector<Card> Player::toCardVector() const {
 unsigned short Player::getHandLength() const {
   unsigned short count = 0;
   for (const auto &[key, cards] : hand) {
-    count = +cards.size();
+    count += cards.size();
   }
   return count;
 }
