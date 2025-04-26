@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['player_0',['Player',['../classPlayer.html#a223f69cd41b3c5930287dc556670d393',1,'Player']]]
+  ['operator_3c_0',['operator&lt;',['../classCard.html#a0b55e9bd5bda814fda02ba359a361e44',1,'Card']]]
 ];

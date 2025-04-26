@@ -1,9 +1,6 @@
 var searchData=
 [
-  ['serverconfig_0',['ServerConfig',['../classServerConfig.html',1,'']]],
-  ['setdebug_1',['setDebug',['../classServerConfig.html#a3594e987513c42eab86a1f3e95cb8579',1,'ServerConfig']]],
-  ['setgame_2',['setGame',['../classServerConfig.html#af6ad4ae2adf6896b8e7558e6b46d5f80',1,'ServerConfig']]],
-  ['setlogging_3',['setLogging',['../classServerConfig.html#af242463e21c0253ef12ce2edbfcbca3a',1,'ServerConfig']]],
-  ['setnetworking_4',['setNetworking',['../classServerConfig.html#a7b2c1adb6c8846ff2923e0d0bc124448',1,'ServerConfig']]],
-  ['setplayerdefaults_5',['setPlayerDefaults',['../classServerConfig.html#a0d244735ed9321b9a91418c5744abdc4',1,'ServerConfig']]]
+  ['operator_21_3d_0',['operator!=',['../classCard.html#a450cf1d610b10ac3ac50eb0a753792f7',1,'Card']]],
+  ['operator_3c_1',['operator&lt;',['../classCard.html#a0b55e9bd5bda814fda02ba359a361e44',1,'Card']]],
+  ['operator_3d_3d_2',['operator==',['../classCard.html#af1272bb300d49ce0b9feec20b7fa7eff',1,'Card']]]
 ];

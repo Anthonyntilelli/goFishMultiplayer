@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['player_0',['Player',['../classPlayer.html',1,'Player'],['../classPlayer.html#a223f69cd41b3c5930287dc556670d393',1,'Player::Player()']]]
+  ['loadconfigfromfile_0',['loadConfigFromFile',['../classServerConfig.html#a981f275fcbac04489bdd364ef4c887c4',1,'ServerConfig']]]
 ];

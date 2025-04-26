@@ -29,12 +29,21 @@ TEST_CASE("Player is initalized correctly") {
   }
 
   SECTION("Valid Player is set up with correct score") {
-    Player p2{"James",
-              {Card("A", "♦"), Card("A", "♣"), Card("A", "♥"), Card("A", "♠"),
-               Card("Q", "♥")}};
-    REQUIRE(p2.getName() == "James");
-    REQUIRE(p2.getScore() == 1);
-    REQUIRE(p2.getHandLength() == 1);
+    Player p{"James",
+             {Card("A", "♦"), Card("A", "♣"), Card("A", "♥"), Card("A", "♠"),
+              Card("Q", "♥")}};
+    REQUIRE(p.getName() == "James");
+    REQUIRE(p.getScore() == 1);
+    REQUIRE(p.getHandLength() == 1);
+    REQUIRE(p.isEliminated() == false);
+  }
+
+  SECTION("Undefined player is created") {
+    Player p{};
+    REQUIRE(p.getName() == "Undefined");
+    REQUIRE(p.getScore() == 0);
+    REQUIRE(p.getHandLength() == 0);
+    REQUIRE(p.isEliminated() == false);
   }
 }
 TEST_CASE("Player cards are added correctly") {
@@ -63,7 +72,7 @@ TEST_CASE("Player cards are added correctly") {
     REQUIRE(p.addCardToHand(Card{"K", "♦"}) == true);
     REQUIRE(p.addCardToHand(Card{"K", "♥"}) == true);
     REQUIRE(p.addCardToHand(Card{"K", "♣"}) == true);
-    REQUIRE(p.getHandLength() == 4); // <----
+    REQUIRE(p.getHandLength() == 4);
     REQUIRE(p.isEmptyHand() == false);
     REQUIRE(p.getScore() == 1);
   }
@@ -126,5 +135,22 @@ TEST_CASE("Player name is correct") {
            {Card("A", "♦"), Card("4", "♠"), Card("5", "♠"), Card("K", "♠"),
             Card("Q", "♥")}};
   REQUIRE(p.getName() == "James");
+}
+TEST_CASE("Player is eliminated correctly") {
+  Player p{"James",
+           {Card("A", "♦"), Card("4", "♠"), Card("5", "♠"), Card("K", "♠"),
+            Card("Q", "♥")}};
+  REQUIRE(p.isEliminated() == false);
+  p.eliminatePlayer();
+  REQUIRE(p.getHandLength() == 5);
+  REQUIRE(p.isEliminated() == true);
+}
+TEST_CASE("Player clears hand correctly") {
+  Player p{"James",
+           {Card("A", "♦"), Card("4", "♠"), Card("5", "♠"), Card("K", "♠"),
+            Card("Q", "♥")}};
+  p.clearHand();
+  REQUIRE(p.toCardVector().size() == 0);
+  REQUIRE(p.isEmptyHand() == true);
 }
 // Player.getScore is implicitly tested in other test cases

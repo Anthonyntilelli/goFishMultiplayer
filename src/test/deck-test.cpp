@@ -49,3 +49,23 @@ TEST_CASE("Draw works correctly") {
     REQUIRE(d.remaining() == 0);
   }
 }
+
+TEST_CASE("Deck pushes cards back correctly") {
+  Deck d{};
+  auto card1 = d.draw();
+  auto card2 = d.draw();
+  auto card3 = d.draw();
+
+  REQUIRE(d.remaining() == 49);
+  d.putCardsBack({card1, card2, card3});
+  REQUIRE(d.remaining() == 52);
+  d.putCardsBack({Card{}});
+  REQUIRE(d.remaining() == 52);
+}
+
+TEST_CASE("Deck is cleared correctly") {
+  Deck d{};
+  REQUIRE(d.isEmpty() == false);
+  d.clear();
+  REQUIRE(d.isEmpty() == true);
+}
