@@ -204,22 +204,25 @@ TEST_CASE("Table returns the correct winner") {
   SECTION("GAME not over") {
     REQUIRE(t.isGameOver() == false);
     REQUIRE(t.getWinner().empty() == true);
-  }
-  SECTION("GAME is a tie") {
-    Table t2{};
-    forcePlayerTie(t2);
-    emptyDeck(t2);
-    REQUIRE(t2.getPlayer("alice").getScore() == 4);
-    REQUIRE(t2.getPlayer("bob").getScore() == 4);
-    REQUIRE(t2.getPlayer("Gary").getScore() == 1);
-    REQUIRE(t2.isGameOver() == true);
-    REQUIRE(t2.getWinner() == "alice, bob");
+    REQUIRE(t.getPlayerCount() == 2);
   }
   SECTION("Game has only one winner") {
     t.startGame();
     forcePlayerWin(t, "bob");
     emptyDeck(t);
+    REQUIRE(t.getPlayer("bob").getScore() != 0);
     REQUIRE(t.isGameOver() == true);
     REQUIRE(t.getWinner() == "bob");
+  }
+  SECTION("GAME is a tie") {
+    Table t2{};
+    forcePlayerTie(t2);
+    emptyDeck(t2);
+
+    REQUIRE(t2.getPlayer("alice").getScore() == 4);
+    REQUIRE(t2.getPlayer("bob").getScore() == 4);
+    REQUIRE(t2.getPlayer("gary").getScore() == 1);
+    REQUIRE(t2.isGameOver() == true);
+    REQUIRE(t2.getWinner() == "bob, alice");
   }
 }

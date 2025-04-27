@@ -4,6 +4,7 @@
 #include "../player/player.hpp"
 #include <algorithm>
 #include <set>
+#include <stdexcept>
 #include <string>
 #include <unordered_map>
 #include <vector>

@@ -153,4 +153,55 @@ TEST_CASE("Player clears hand correctly") {
   REQUIRE(p.toCardVector().size() == 0);
   REQUIRE(p.isEmptyHand() == true);
 }
-// Player.getScore is implicitly tested in other test cases
+TEST_CASE("Player getScore correctly") {
+  const std::set<Card> pile1 = {
+      Card{"A", "♣"}, Card{"A", "♦"}, Card{"A", "♥"}, Card{"A", "♠"},
+      Card{"2", "♣"}, Card{"2", "♦"}, Card{"2", "♥"}, Card{"2", "♠"},
+      Card{"3", "♣"}, Card{"3", "♦"}, Card{"3", "♥"}, Card{"3", "♠"},
+      Card{"4", "♣"}, Card{"4", "♦"}, Card{"4", "♥"}, Card{"4", "♠"}};
+  const std::set<Card> pile2 = {
+      Card{"5", "♣"}, Card{"5", "♦"}, Card{"5", "♥"}, Card{"5", "♠"},
+      Card{"6", "♣"}, Card{"6", "♦"}, Card{"6", "♥"}, Card{"6", "♠"},
+      Card{"7", "♣"}, Card{"7", "♦"}, Card{"7", "♥"}, Card{"7", "♠"},
+      Card{"8", "♣"}, Card{"8", "♦"}, Card{"8", "♥"}, Card{"8", "♠"}};
+  const std::set<Card> pile3 = {
+      Card{"5", "♣"},
+      Card{"5", "♦"},
+      Card{"5", "♥"},
+      Card{"5", "♠"},
+  };
+
+  SECTION("Sets score via constructor") {
+    Card extraCard{"K", "♥"};
+
+    Player empty{};
+    Player alice{"alice", pile1};
+    alice.addCardToHand(extraCard);
+    Player bob{"bob", pile2};
+    bob.addCardToHand(extraCard);
+    Player gary{"gary", pile3};
+    gary.addCardToHand(extraCard);
+
+    REQUIRE(empty.getScore() == 0);
+    REQUIRE(alice.getScore() == 4);
+    REQUIRE(bob.getScore() == 4);
+    REQUIRE(gary.getScore() == 1);
+  }
+
+  SECTION("Sets sore via addCardToHand") {
+    Player p{};
+    Player p2{};
+
+    REQUIRE(p.getScore() == 0);
+    for (const auto card : pile3) {
+      p.addCardToHand(card);
+    }
+    REQUIRE(p.getHandLength() == 0);
+    REQUIRE(p.getScore() == 1);
+    REQUIRE(p2.getScore() == 0);
+    for (const auto card : pile1) {
+      p2.addCardToHand(card);
+    }
+    REQUIRE(p2.getScore() == 4);
+  }
+}

@@ -116,40 +116,39 @@ bool Table::isGameOver() const {
 std::string Table::getWinner() const {
   if (!isGameOver())
     return "";
-  std::string highestPlayer{};
-  std::vector<std::string> additionalWinners{};
-  for (const auto name : rotation) {
-    if (highestPlayer.empty()) {
-      highestPlayer = name;
-    } else {
-      if (players.at(name).getScore() == players.at(highestPlayer).getScore())
-        additionalWinners.push_back(players.at(name).getName());
-      if (players.at(name).getScore() > players.at(highestPlayer).getScore())
-        highestPlayer = name;
+  if (players.empty())
+    return "";
+  std::map<int, std::vector<std::string>> scoreList{};
+  for (const auto [_, player] : players) {
+    if (!scoreList.contains(player.getScore())) {
+      scoreList[player.getScore()] = {};
     }
+    scoreList.at(player.getScore()).push_back(player.getName());
+  }
+  std::string winners{};
+  for (const auto name : scoreList.crbegin()->second) {
+    winners += (name + ", ");
   }
 
-  // Tie
-  if (!additionalWinners.empty()) {
-    std::string returnVal = highestPlayer + ", ";
-    for (auto name : additionalWinners)
-      returnVal += name + ", ";
-    return returnVal;
+  if (!winners.empty()) {
+    winners.erase(winners.size() - 2); // Remove the last ", "
   }
-
-  return highestPlayer;
+  return winners;
 }
 
 // Debug
 void emptyDeck(Table &t) { t.deck.clear(); }
 void forcePlayerWin(Table &t, const std::string &name) {
-  auto player = t.players.at(name);
-  while (t.deck.isEmpty()) {
-    auto card = t.deck.draw();
-    player.addCardToHand(card);
+  while (!t.deck.isEmpty()) {
+    t.players.at(name).addCardToHand(t.deck.draw());
   }
 }
 void forcePlayerTie(Table &t) {
+  if (!t.rotation.empty())
+    throw std::invalid_argument("table t is not empty");
+  if (t.deck.remaining() != 52)
+    throw std::invalid_argument("table t is missing cards");
+
   std::set<Card> pile1 = {
       Card{"A", "♣"}, Card{"A", "♦"}, Card{"A", "♥"}, Card{"A", "♠"},
       Card{"2", "♣"}, Card{"2", "♦"}, Card{"2", "♥"}, Card{"2", "♠"},
@@ -160,26 +159,19 @@ void forcePlayerTie(Table &t) {
       Card{"6", "♣"}, Card{"6", "♦"}, Card{"6", "♥"}, Card{"6", "♠"},
       Card{"7", "♣"}, Card{"7", "♦"}, Card{"7", "♥"}, Card{"7", "♠"},
       Card{"8", "♣"}, Card{"8", "♦"}, Card{"8", "♥"}, Card{"8", "♠"}};
-  std::set<Card> pile3 = {
-      Card{"5", "♣"},
-      Card{"5", "♦"},
-      Card{"5", "♥"},
-      Card{"5", "♠"},
-  };
-
-  t.players.clear();
-  t.rotation.clear();
+  std::set<Card> pile3 = {Card{"5", "♣"}, Card{"5", "♦"}, Card{"5", "♥"},
+                          Card{"5", "♠"}};
 
   Player a{"alice", pile1};
   t.players["alice"] = a;
   t.rotation.push_back("alice");
 
-  Player b{"bob", pile1};
+  Player b{"bob", pile2};
   t.players["bob"] = b;
   t.rotation.push_back("bob");
 
-  Player c{"Gary", pile3};
-  t.players["Gary"] = b;
-  t.rotation.push_back("Gary");
+  Player c{"gary", pile3};
+  t.players["gary"] = c;
+  t.rotation.push_back("gary");
   t.startGame();
 }
