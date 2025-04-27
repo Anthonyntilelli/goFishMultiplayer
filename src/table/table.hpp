@@ -17,6 +17,23 @@ struct TableMessage {
   bool error{false};
 };
 
+class Table;
+namespace test {
+/// @brief [test method] empty players deck.
+/// @param t table with players.
+void emptyDeck(Table &t);
+
+/// @brief [test method] make a player the winner.
+/// @param t table player.
+/// @param name name of winning player.
+void forcePlayerWin(Table &t, const std::string &name);
+
+///@brief [test method] forces a player tie and startsGame.
+///@param t empty table only.
+void forcePlayerTie(Table &t);
+
+} // namespace test
+
 /// @brief Table where game is played.
 class Table {
 private:
@@ -78,18 +95,9 @@ public:
   /// Multiple names are returned on ties.
   std::string getWinner() const;
 
-  /// @brief [Debug method] empty players deck.
-  /// @param t table with players.
-  friend void emptyDeck(Table &t);
-
-  /// @brief [Debug method] make a player the winner.
-  /// @param t table player.
-  /// @param name name of winning player.
-  friend void forcePlayerWin(Table &t, const std::string &name);
-
-  ///@brief [Debug method] forces a player tie and startsGame.
-  ///@param t empty table only.
-  friend void forcePlayerTie(Table &t);
+  friend void test::emptyDeck(Table &t);
+  friend void test::forcePlayerWin(Table &t, const std::string &name);
+  friend void test::forcePlayerTie(Table &t);
 };
 
 #endif

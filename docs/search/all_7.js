@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['loadconfigfromfile_0',['loadConfigFromFile',['../classServerConfig.html#a981f275fcbac04489bdd364ef4c887c4',1,'ServerConfig']]]
+  ['message_0',['message',['../structTableMessage.html#a0f96869fd99523f314d3c937842f004d',1,'TableMessage']]]
 ];

@@ -185,7 +185,7 @@ TEST_CASE("Table states gameOver correctly") {
 
   SECTION("gameOver on empty deck") {
     REQUIRE(t.isGameOver() == false);
-    emptyDeck(t);
+    test::emptyDeck(t);
     REQUIRE(t.isGameOver() == true);
   }
 
@@ -208,16 +208,16 @@ TEST_CASE("Table returns the correct winner") {
   }
   SECTION("Game has only one winner") {
     t.startGame();
-    forcePlayerWin(t, "bob");
-    emptyDeck(t);
+    test::forcePlayerWin(t, "bob");
+    test::emptyDeck(t);
     REQUIRE(t.getPlayer("bob").getScore() != 0);
     REQUIRE(t.isGameOver() == true);
     REQUIRE(t.getWinner() == "bob");
   }
   SECTION("GAME is a tie") {
     Table t2{};
-    forcePlayerTie(t2);
-    emptyDeck(t2);
+    test::forcePlayerTie(t2);
+    test::emptyDeck(t2);
 
     REQUIRE(t2.getPlayer("alice").getScore() == 4);
     REQUIRE(t2.getPlayer("bob").getScore() == 4);

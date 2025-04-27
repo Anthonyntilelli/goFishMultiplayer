@@ -136,14 +136,14 @@ std::string Table::getWinner() const {
   return winners;
 }
 
-// Debug
-void emptyDeck(Table &t) { t.deck.clear(); }
-void forcePlayerWin(Table &t, const std::string &name) {
+// TEST
+void test::emptyDeck(Table &t) { t.deck.clear(); }
+void test::forcePlayerWin(Table &t, const std::string &name) {
   while (!t.deck.isEmpty()) {
     t.players.at(name).addCardToHand(t.deck.draw());
   }
 }
-void forcePlayerTie(Table &t) {
+void test::forcePlayerTie(Table &t) {
   if (!t.rotation.empty())
     throw std::invalid_argument("table t is not empty");
   if (t.deck.remaining() != 52)
