@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['operator_3c_0',['operator&lt;',['../classCard.html#a0b55e9bd5bda814fda02ba359a361e44',1,'Card']]]
+  ['loadconfigfromfile_0',['loadConfigFromFile',['../classServerConfig.html#a981f275fcbac04489bdd364ef4c887c4',1,'ServerConfig']]]
 ];

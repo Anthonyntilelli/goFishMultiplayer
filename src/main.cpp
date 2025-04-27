@@ -1,5 +1,5 @@
 #include "config/serverConfig.hpp"
-#include "deck/deck.hpp"
+#include "table/table.hpp"
 #include <filesystem>
 #include <iostream>
 namespace fs = std::filesystem;

@@ -1,9 +1,5 @@
 var searchData=
 [
-  ['serverconfig_0',['ServerConfig',['../classServerConfig.html',1,'']]],
-  ['setdebug_1',['setDebug',['../classServerConfig.html#a3594e987513c42eab86a1f3e95cb8579',1,'ServerConfig']]],
-  ['setgame_2',['setGame',['../classServerConfig.html#af6ad4ae2adf6896b8e7558e6b46d5f80',1,'ServerConfig']]],
-  ['setlogging_3',['setLogging',['../classServerConfig.html#af242463e21c0253ef12ce2edbfcbca3a',1,'ServerConfig']]],
-  ['setnetworking_4',['setNetworking',['../classServerConfig.html#a7b2c1adb6c8846ff2923e0d0bc124448',1,'ServerConfig']]],
-  ['setplayerdefaults_5',['setPlayerDefaults',['../classServerConfig.html#a0d244735ed9321b9a91418c5744abdc4',1,'ServerConfig']]]
+  ['player_0',['Player',['../classPlayer.html',1,'Player'],['../classPlayer.html#aaa23b3bf80e8c0267cf08d4fe4d6ddc1',1,'Player::Player()=default'],['../classPlayer.html#a223f69cd41b3c5930287dc556670d393',1,'Player::Player(const std::string &amp;name, const std::set&lt; Card &gt; &amp;initialHand)']]],
+  ['putcardsback_1',['putCardsBack',['../classDeck.html#a6a967146fa04e9c183273bfd884fcc33',1,'Deck']]]
 ];

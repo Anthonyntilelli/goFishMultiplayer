@@ -43,6 +43,12 @@ std::vector<Card> Player::askForCards(const std::string &value) {
   return cards;
 }
 
+void Player::clearHand() {
+  hand = {{"A", {}}, {"2", {}}, {"3", {}}, {"4", {}}, {"5", {}},
+          {"6", {}}, {"7", {}}, {"8", {}}, {"9", {}}, {"10", {}},
+          {"J", {}}, {"Q", {}}, {"K", {}}};
+}
+
 bool Player::isEmptyHand() const { return getHandLength() == 0; }
 
 std::vector<Card> Player::toCardVector() const {
@@ -55,6 +61,8 @@ std::vector<Card> Player::toCardVector() const {
   return returnVal;
 }
 
+void Player::eliminatePlayer() { eliminated = true; }
+
 unsigned short Player::getHandLength() const {
   unsigned short count = 0;
   for (const auto &[key, cards] : hand) {
@@ -66,3 +74,5 @@ unsigned short Player::getHandLength() const {
 std::string Player::getName() const { return name; }
 
 unsigned short Player::getScore() const { return score; }
+
+bool Player::isEliminated() const { return eliminated; }

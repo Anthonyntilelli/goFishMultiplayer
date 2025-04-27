@@ -5,6 +5,7 @@ add_executable(tests
     deck-test.cpp
     card-test.cpp
     player-test.cpp
+    table-test.cpp
 )
 
 target_link_libraries(tests
@@ -14,6 +15,7 @@ target_link_libraries(tests
         deck
         card
         player
+        table
 )
 
 include(Catch)

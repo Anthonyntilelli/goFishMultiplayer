@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['tocardvector_0',['toCardVector',['../classPlayer.html#a8dfa69c2206a3e811b2e99d32cead7bf',1,'Player']]]
+  ['remaining_0',['remaining',['../classDeck.html#a582f5b4d0cbf4f5c2506763ada7185fa',1,'Deck']]]
 ];

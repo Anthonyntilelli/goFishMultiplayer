@@ -1,18 +1,33 @@
 #include "deck.hpp"
 
-Deck::Deck() {
+void Deck::shuffle() {
   unsigned seed = std::chrono::system_clock::now().time_since_epoch().count();
   std::shuffle(pile.begin(), pile.end(), std::default_random_engine(seed));
 }
 
-bool Deck::isEmpty() const { return position == 52; }
+Deck::Deck() { shuffle(); }
 
-unsigned int Deck::remaining() const { return 52 - position; }
+bool Deck::isEmpty() const { return pile.empty(); }
+
+unsigned int Deck::remaining() const { return pile.size(); }
 
 Card Deck::draw() {
-  if (position == 52)
+  if (pile.empty())
     return Card{"", ""};
-  auto card = pile.at(position);
-  position++;
+
+  auto card = pile.back();
+  // Remove last element
+  pile.pop_back();
+
   return card;
 }
+
+void Deck::putCardsBack(std::vector<Card> cards) {
+  for (auto card : cards) {
+    if (!card.isBlank())
+      pile.push_back(card);
+  }
+  void shuffle();
+}
+
+void Deck::clear() { pile.clear(); }
