@@ -37,9 +37,18 @@ Docs can be seen [here](https://anthonyntilelli.github.io/goFishMultiplayer/)
 
 ### Static Analysis
 
+### CppCheck
+
 CppCheck is used to preform the static analysis of the code in sr/
 Static check are automatically run every Cmake build by default.
-The cmake option "staticCheck" is used to control if static check will run.
+The cmake option "staticCheck1" is used to control if static check will run.
+
+### Clang-tidy
+
+Clang-tidy is also available to run static analysis on the project. But it is not part of the cmake build as it is much slower then cppCheck.
+
+- Run `run-clang-tidy.sh`. To run the full check.
+- Run `git diff --name-only origin/main | grep -E '\.(cpp|hpp)$' | xargs run-clang-tidy-19 -p=./build -j 2` for a subset of changed files compared to main. Note: will error out if there are no cpp/hpp files that have changed.
 
 ### Formatting
 

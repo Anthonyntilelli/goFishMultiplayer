@@ -4,6 +4,8 @@ project(GoFishMultiplayer VERSION 0.0.1 LANGUAGES CXX)
 set(CMAKE_CXX_STANDARD 23)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 set(CMAKE_CXX_EXTENSIONS OFF)
+set(CMAKE_EXPORT_COMPILE_COMMANDS ON) # Turn on for clang-tidy-19 (must be on)
+
 
 option(genDocs "Automatically run doxygen" ON)
 option(staticCheck "Run static check via cppcheck" ON)

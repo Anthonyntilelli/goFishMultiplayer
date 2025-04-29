@@ -73,12 +73,22 @@ Vagrant.configure("2") do |config|
   # documentation for more information about their specific syntax and use.
   config.vm.provision "shell", inline: <<-SHELL
     apt-get update
-    apt-get install -y git build-essential valgrind cppcheck tree clang-format gdb doxygen graphviz
-    # GET CMAKE 4
-    cd /tmp
+    apt-get upgrade -y
     apt-get install -y wget
-    wget https://github.com/Kitware/CMake/releases/download/v4.0.0/cmake-4.0.0-linux-x86_64.sh
-    chmod +x cmake-4.0.0-linux-x86_64.sh
-    ./cmake-4.0.0-linux-x86_64.sh --skip-license --exclude-subdir --prefix=/usr/local
+    (  
+      apt-get install -y git build-essential valgrind cppcheck jq tree clang-format gdb doxygen graphviz
+      # Install clang tidy
+      apt-get install -y clang-tidy clang-tidy-19
+      sudo update-alternatives --install /usr/bin/clang-tidy clang-tidy /usr/bin/clang-tidy-14 10
+      sudo update-alternatives --install /usr/bin/clang-tidy clang-tidy /usr/bin/clang-tidy-19 20
+    ) &
+    (
+      # GET CMAKE 4
+      cd /tmp
+      wget https://github.com/Kitware/CMake/releases/download/v4.0.0/cmake-4.0.0-linux-x86_64.sh
+      chmod +x cmake-4.0.0-linux-x86_64.sh
+      ./cmake-4.0.0-linux-x86_64.sh --skip-license --exclude-subdir --prefix=/usr/local
+    ) &
+    wait
   SHELL
 end
