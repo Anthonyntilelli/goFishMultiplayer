@@ -1,7 +1,9 @@
 {
     "cmake.useCMakePresets":"auto",
     "cSpell.words": [
+        "asio",
         "catchorg",
+        "chriskohlhoff",
         "cppcheck",
         "ctest",
         "Dgen",

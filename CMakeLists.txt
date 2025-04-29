@@ -20,6 +20,11 @@ FetchContent_MakeAvailable(CPM)
 # Add dependencies
 CPMAddPackage("gh:nlohmann/json@3.11.3")
 CPMAddPackage("gh:catchorg/Catch2@3.8.1")
+CPMAddPackage(
+  NAME asio
+  GITHUB_REPOSITORY chriskohlhoff/asio
+  GIT_TAG asio-1-34-2
+)
 
 # Add your source directory
 add_subdirectory(src)
@@ -29,6 +34,9 @@ add_executable(goFishMultiplayer src/main.cpp)
 
 # Link dependencies to the executable
 target_link_libraries(goFishMultiplayer PRIVATE nlohmann_json::nlohmann_json serverConfig deck card player table)
+
+# Adding asio
+target_include_directories(goFishMultiplayer PRIVATE ${asio_SOURCE_DIR}/asio/include)
 
 # Add Cmake Modules
 list(PREPEND CMAKE_MODULE_PATH "${Catch2_SOURCE_DIR}/extras")
