@@ -73,7 +73,7 @@ Vagrant.configure("2") do |config|
   # documentation for more information about their specific syntax and use.
   config.vm.provision "shell", inline: <<-SHELL
     apt-get update
-    apt-get install -y git build-essential valgrind cppcheck clang-format gdb doxygen graphviz
+    apt-get install -y git build-essential valgrind cppcheck tree clang-format gdb doxygen graphviz
     # GET CMAKE 4
     cd /tmp
     apt-get install -y wget
