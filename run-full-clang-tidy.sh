@@ -20,5 +20,5 @@ if [ $? -ne 0 ]; then
 fi
 
 echo "[*] Running run-clang-tidy-19 with $FILTERED_DB"
-run-clang-tidy-19 -p="$FILTERED_DIR" -j "$THREADS" | tee clang-tidy.log
-rm -r "$FILTERED_DIR"
+run-clang-tidy-19 -quiet -p="$FILTERED_DIR" -j "$THREADS" | tee clang-tidy.log
+rm -r "$FILTERED_DB"

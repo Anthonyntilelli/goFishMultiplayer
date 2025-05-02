@@ -12,6 +12,7 @@ if(CPPCHECK_EXECUTABLE)
             --check-config
             --inconclusive
             --suppress=missingIncludeSystem
+            --quiet
             ${CPPCHECK_FILES}
     WORKING_DIRECTORY ${CMAKE_SOURCE_DIR}
     COMMENT "Running cppcheck on src/"
