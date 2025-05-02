@@ -6,6 +6,7 @@ add_executable(tests
     card-test.cpp
     player-test.cpp
     table-test.cpp
+    logger-test.cpp
 )
 
 target_link_libraries(tests
@@ -16,6 +17,7 @@ target_link_libraries(tests
         card
         player
         table
+        logger
 )
 
 include(Catch)

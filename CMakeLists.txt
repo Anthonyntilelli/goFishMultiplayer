@@ -35,7 +35,7 @@ add_subdirectory(src)
 add_executable(goFishMultiplayer src/main.cpp)
 
 # Link dependencies to the executable
-target_link_libraries(goFishMultiplayer PRIVATE nlohmann_json::nlohmann_json serverConfig deck card player table)
+target_link_libraries(goFishMultiplayer PRIVATE nlohmann_json::nlohmann_json serverConfig deck card player table logger)
 
 # Adding asio
 target_include_directories(goFishMultiplayer PRIVATE ${asio_SOURCE_DIR}/asio/include)
