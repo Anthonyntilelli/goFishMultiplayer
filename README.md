@@ -6,8 +6,10 @@
 2. Parameters
 3. Examples
 4. Build
-5. Mic
-6. Authors
+5. Testing
+6. Networking
+7. Mic
+8. Authors
 
 ## Description
 
@@ -22,11 +24,18 @@
 - `cmake -S . -B build`
 - `cmake --build build`
 
-## Mic
+## Testing 
 
-### Testing 
+Note: Never run test as sudo or root.
 
 - `ctest --test-dir build --output-on-failure`
+
+## Networking
+
+Networking diagrams can be found in [NETWORK.md](NETWORK.md). It uses [mermaid JS](https://mermaid.js.org/) to render the diagrams.
+
+## Mic
+
 
 ### Generating Documentation
 
@@ -37,13 +46,13 @@ Docs can be seen [here](https://anthonyntilelli.github.io/goFishMultiplayer/)
 
 ### Static Analysis
 
-### CppCheck
+#### CppCheck
 
-CppCheck is used to preform the static analysis of the code in sr/
+CppCheck is used to preform the static analysis of the code in `src/`.
 Static check are automatically run every Cmake build by default.
-The cmake option "staticCheck1" is used to control if static check will run.
+The cmake option "staticCheck" is used to control if static check will run.
 
-### Clang-tidy
+#### Clang-tidy
 
 Clang-tidy is also available to run static analysis on the project. But it is not part of the cmake build as it is much slower then cppCheck.
 

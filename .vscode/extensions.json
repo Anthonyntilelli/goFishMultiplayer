@@ -4,6 +4,7 @@
         "ms-vscode.cpptools-themes",
         "ms-vscode.cpptools-extension-pack",
         "ms-vscode.cpptools",
-        "streetsidesoftware.code-spell-checker-cspell-bundled-dictionaries"
+        "streetsidesoftware.code-spell-checker-cspell-bundled-dictionaries",
+        "bierner.markdown-mermaid"
     ]
 }

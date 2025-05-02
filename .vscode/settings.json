@@ -89,6 +89,10 @@
         "variant": "cpp",
         "expected": "cpp",
         "future": "cpp",
-        "filesystem": "cpp"
+        "filesystem": "cpp",
+        "strstream": "cpp",
+        "cinttypes": "cpp",
+        "coroutine": "cpp",
+        "source_location": "cpp"
     }
 }
