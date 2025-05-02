@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['serverconfig_0',['ServerConfig',['../classServerConfig.html',1,'']]]
+  ['player_0',['Player',['../classPlayer.html',1,'']]]
 ];

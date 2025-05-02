@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.9.4"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>GO Fish Multiplayer: src Directory Reference</title>
+<title>GO Fish Multiplayer: Networking diagram for server to client communication</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -60,32 +60,39 @@ $(function() {
 </iframe>
 </div>
 
-<div id="nav-path" class="navpath">
-  <ul>
-<li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li>  </ul>
-</div>
 </div><!-- top -->
-<div class="header">
-  <div class="headertitle"><div class="title">src Directory Reference</div></div>
+<div><div class="header">
+  <div class="headertitle"><div class="title">Networking diagram for server to client communication </div></div>
 </div><!--header-->
 <div class="contents">
-<table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="subdirs" name="subdirs"></a>
-Directories</h2></td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">directory &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="dir_aadec66ccdcd7da91dace2e07220b14d.html">card</a></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">directory &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="dir_7e83d1792d529f4aa7126ac7e0b3b699.html">config</a></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">directory &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="dir_80b2bdf578a5290e4aa877db1f8440ce.html">deck</a></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">directory &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="dir_ffde1fbcaa8d6b0d34e29c3bddf7a801.html">logger</a></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">directory &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="dir_975424cdae97a07db69e55371758444e.html">player</a></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">directory &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="dir_20706930dc76f634e133f76dc3cfb728.html">table</a></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table>
-</div><!-- contents -->
+<div class="textblock"><h1><a class="anchor" id="autotoc_md16"></a>
+Starting a New game</h1>
+<div class="fragment"><div class="line">sequenceDiagram</div>
+<div class="line">    participant Player1</div>
+<div class="line">    participant Server</div>
+<div class="line"> </div>
+<div class="line">    Player1-&gt;&gt;Server: TCP connection</div>
+<div class="line">    Player1--&gt;&gt;Server: { &quot;action&quot;: &quot;StartGame&quot;, &quot;playerName&quot;: &quot;bob&quot; }</div>
+<div class="line">    Server--&gt;&gt;Player1: { &quot;action&quot;: &quot;confirm&quot;, &quot;tableCode&quot;: &quot;abc123&quot;}</div>
+</div><!-- fragment --><h1><a class="anchor" id="autotoc_md17"></a>
+Joining a Waiting game</h1>
+<div class="fragment"><div class="line">sequenceDiagram</div>
+<div class="line">    participant Player1</div>
+<div class="line">    participant Server</div>
+<div class="line">    participant Player2</div>
+<div class="line"> </div>
+<div class="line">    Player1-&gt;&gt;Server: TCP connection</div>
+<div class="line">    Player2-&gt;&gt;Server: TCP connection</div>
+<div class="line">    Player1--&gt;&gt;Server: { &quot;action&quot;: &quot;joinGame&quot;, &quot;playerName&quot;: &quot;bob&quot; }</div>
+<div class="line">    Server--&gt;&gt;Player1: { &quot;action&quot;: &quot;confirm&quot;, &quot;tableCode&quot;: &quot;abc123&quot;}</div>
+<div class="line">    Player2--&gt;&gt;Server: { &quot;action&quot;: &quot;joinGame&quot;, &quot;playerName&quot;: &quot;alice&quot; }</div>
+<div class="line">    Server--&gt;&gt;Player2: { &quot;action&quot;: &quot;confirm&quot;, &quot;tableCode&quot;: &quot;abc123&quot;}</div>
+<div class="line">    Player1--&gt;&gt;Server: {&quot;action&quot;: &quot;ready&quot;, &quot;playerName&quot;:&quot;bob&quot;, &quot;tableCode&quot;: &quot;abc123&quot;}</div>
+<div class="line">    Player2--&gt;&gt;Server: {&quot;action&quot;: &quot;ready&quot;, &quot;playerName&quot;:&quot;alice&quot;, &quot;tableCode&quot;: &quot;abc123&quot;}</div>
+<div class="line">    Server--&gt;&gt;Player1: { &quot;action&quot;: &quot;start&quot;, &quot;tableCode&quot;: &quot;abc123&quot;, &quot;playerHand&quot;: [...]}</div>
+<div class="line">    Server--&gt;&gt;Player2: { &quot;action&quot;: &quot;start&quot;, &quot;tableCode&quot;: &quot;abc123&quot;, &quot;playerHand&quot;: [...]}</div>
+</div><!-- fragment --> </div></div><!-- contents -->
+</div><!-- PageDoc -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
 Generated by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.4
