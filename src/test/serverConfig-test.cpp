@@ -14,7 +14,7 @@ TEST_CASE("Server config starts with expected Defaults") {
   REQUIRE(c.getPlayerDefaultMaxNameLength() == 16);
   REQUIRE(c.getPlayerDefaultAllowCustomNames() == true);
   REQUIRE(c.getLoggingEnableLogging() == false);
-  REQUIRE(c.getDebugEnableDebuging() == false);
+  REQUIRE(c.getDebugEnableDebugging() == false);
 }
 TEST_CASE("Server config sets Networking Correctly") {
   ServerConfig c{};
@@ -150,16 +150,16 @@ TEST_CASE("Server config sets Debug Correctly") {
   ServerConfig c{};
   SECTION("Correctly sets enableDebug") {
     c.setDebug(true);
-    REQUIRE(c.getDebugEnableDebuging() == true);
+    REQUIRE(c.getDebugEnableDebugging() == true);
     c.setDebug(false);
-    REQUIRE(c.getDebugEnableDebuging() == false);
+    REQUIRE(c.getDebugEnableDebugging() == false);
   }
 }
 TEST_CASE("Server Config loads file correctly") {
   SECTION("Accepts valid debug") {
     ServerConfig c{};
     REQUIRE(c.loadConfigFromFile("./config/tests/valid/debug.json").empty());
-    REQUIRE(c.getDebugEnableDebuging() == true);
+    REQUIRE(c.getDebugEnableDebugging() == true);
   }
   SECTION("Accepts valid game") {
     ServerConfig c{};

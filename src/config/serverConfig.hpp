@@ -12,7 +12,7 @@
 class ServerConfig {
 private:
   std::string playerDefaultDefaultNamePrefix{"Player"};
-  std::string loggingLogfile{""};
+  std::string loggingLogFile{""};
   unsigned short networkPort = 8000;
   unsigned short networkTimeoutSec = 10;
   unsigned short gameMinPlayers = 2;
@@ -20,7 +20,7 @@ private:
   unsigned short playerDefaultMaxNameLength = 16;
   bool playerDefaultAllowCustomNames = true;
   bool loggingEnableLogging = false;
-  bool debugEnableDebuging = false;
+  bool debugEnableDebugging = false;
 
 public:
   /// @brief Reads the json config file and load the configuration into the
@@ -68,7 +68,7 @@ public:
   /// @brief Get method for PlayerDefaultDefaultNamePrefix
   std::string getPlayerDefaultDefaultNamePrefix() const;
 
-  /// @brief Get method for loggingLogfile
+  /// @brief Get method for loggingLogFile
   std::string getLoggingLogfile() const;
 
   /// @brief Get method for NetworkPort
@@ -92,8 +92,8 @@ public:
   /// @brief Get method for LoggingEnableLogging
   bool getLoggingEnableLogging() const;
 
-  /// @brief Get method for DebugEnableDebuging
-  bool getDebugEnableDebuging() const;
+  /// @brief Get method for DebugEnableDebugging
+  bool getDebugEnableDebugging() const;
 };
 
 #endif

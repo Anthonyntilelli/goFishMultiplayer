@@ -153,20 +153,20 @@ std::string ServerConfig::setLogging(const bool enableLogging,
       return std::string{"Failed to open file:" + logFile};
     }
   }
-  loggingLogfile = logFile;
+  loggingLogFile = logFile;
   loggingEnableLogging = enableLogging;
   return "";
 }
 
 void ServerConfig::setDebug(const bool enableDebug) {
-  debugEnableDebuging = enableDebug;
+  debugEnableDebugging = enableDebug;
 }
 
 std::string ServerConfig::getPlayerDefaultDefaultNamePrefix() const {
   return playerDefaultDefaultNamePrefix;
 }
 
-std::string ServerConfig::getLoggingLogfile() const { return loggingLogfile; }
+std::string ServerConfig::getLoggingLogfile() const { return loggingLogFile; }
 
 unsigned short ServerConfig::getNetworkPort() const { return networkPort; }
 
@@ -194,6 +194,6 @@ bool ServerConfig::getLoggingEnableLogging() const {
   return loggingEnableLogging;
 }
 
-bool ServerConfig::getDebugEnableDebuging() const {
-  return debugEnableDebuging;
+bool ServerConfig::getDebugEnableDebugging() const {
+  return debugEnableDebugging;
 };

@@ -95,8 +95,19 @@ public:
   /// Multiple names are returned on ties.
   std::string getWinner() const;
 
+  /// @brief Empties the deck in the given Table instance (testing only).
+  /// @param t Reference to the Table to modify.
   friend void test::emptyDeck(Table &t);
+
+  /// @brief Forces a specific player to win in the Table (testing only).
+  /// @param t Reference to the Table to modify.
+  /// @param name Name of the player to be set as winner.
   friend void test::forcePlayerWin(Table &t, const std::string &name);
+
+  /// @brief Forces a tie condition in the Table (testing only).
+  /// @param t Reference to the Table to modify.
+  /// @throws "invalid_argument" if table is not fresh.
+  /// t must NOT have players and NOT be missing cards.
   friend void test::forcePlayerTie(Table &t);
 };
 
